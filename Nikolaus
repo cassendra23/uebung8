@@ -1,0 +1,51 @@
+package org.hsd.inflab.uebung8;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
+import javafx.stage.Stage;
+
+public class Nikolaus extends Application {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		launch();
+
+	}
+
+	@Override
+	public void start(Stage stage) throws Exception {
+		// TODO Auto-generated method stub
+		Pane root = new Pane();	
+		Canvas canvas = new Canvas(300, 300);	
+		GraphicsContext gc = canvas.getGraphicsContext2D();
+		
+		root.getChildren().add(canvas);
+		
+		Scene scene = new Scene(root, 300, 300);		
+		stage.setTitle("Haus von Nikolaus");
+		stage.setScene(scene);
+		stage.show();
+		
+		//4 triangles
+		gc.setFill(Color.RED);
+		gc.setStroke(Color.BLACK);
+		
+		gc.fillPolygon(new double[] {100, 150, 200}, new double[] {100, 50, 100}, 3);
+		gc.strokePolygon(new double[] {100, 150, 200}, new double[] {100, 50, 100}, 3);
+		gc.fillPolygon(new double[] {100, 100, 150}, new double[] {100, 200, 150}, 3);
+		gc.strokePolygon(new double[] {100, 100, 150}, new double[] {100, 200, 150}, 3);
+		gc.fillPolygon(new double[] {100, 150, 200}, new double[] {100, 150, 100}, 3);
+		gc.strokePolygon(new double[] {100, 150, 200}, new double[] {100, 150, 100}, 3);
+		gc.fillPolygon(new double[] {100, 150, 200}, new double[] {200, 150, 200}, 3);
+		gc.strokePolygon(new double[] {100, 150, 200}, new double[] {200, 150, 200}, 3);
+		gc.fillPolygon(new double[] {200, 150, 200}, new double[] {100, 150, 200}, 3);
+		gc.strokePolygon(new double[] {200, 150, 200}, new double[] {100, 150, 200}, 3);			
+		
+	}
+
+	}
