@@ -1,0 +1,51 @@
+package org.hsd.inflab.uebung8;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.Group;
+
+
+/**
+ * JavaFX App
+ */
+public class App extends Application {
+
+    @Override
+    //start method
+    public void start(Stage stage) {  	
+    	
+    	//create group object
+    	Group root = new Group();
+    	
+    	//create 3 rectangles
+    	//(x, y, length, height)
+        Rectangle black = new Rectangle(30, 30, 200, 30);
+        black.setFill(Color.BLACK);
+        Rectangle red = new Rectangle(30, 60, 200, 30);
+        red.setFill(Color.RED);
+        Rectangle gold = new Rectangle(30, 90, 200, 30);
+        gold.setFill(Color.GOLD);
+        
+        root.getChildren().addAll(black, red, gold);
+        
+        //create scene object
+        Scene scene = new Scene(root, 270, 210);
+        //set title to stage
+        stage.setTitle("Deutsche Flagge");
+        //add scene object to stage
+        stage.setScene(scene);
+        //method to display contents of stage 
+        stage.show();
+    }
+
+    //launch application in main method
+    public static void main(String[] args) {
+        launch();
+    }
+
+}
