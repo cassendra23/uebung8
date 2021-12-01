@@ -1,0 +1,54 @@
+package org.hsd.inflab.uebung8;
+
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Line;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+
+public class NikolausHaus extends Application {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		launch();
+
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+			Pane root = new Pane();	
+		Canvas canvas = new Canvas(300, 300);	
+		GraphicsContext gc = canvas.getGraphicsContext2D();
+		
+		root.getChildren().add(canvas);
+		
+		Scene scene = new Scene(root, 300, 300);	
+		primaryStage.setTitle("Haus vom Nikolaus");
+		primaryStage.setScene(scene);
+		primaryStage.show();	
+
+		//1 rectangle, 1 triangle
+	
+		gc.setFill(Color.RED);
+		gc.setStroke(Color.BLACK);
+		
+		gc.fillPolygon(new double[] {100, 150, 200}, new double[] {100, 50, 100}, 3);
+		gc.strokePolygon(new double[] {100, 150, 200}, new double[] {100, 50, 100}, 3);
+		gc.fillRect(100, 100, 100, 100);
+		gc.strokeRect(100, 100, 100, 100);
+		gc.beginPath();
+		gc.moveTo(100, 100);
+		gc.lineTo(200, 200);
+		gc.moveTo(200, 100);
+		gc.lineTo(100, 200);
+		gc.stroke();
+		
+	}
+}
